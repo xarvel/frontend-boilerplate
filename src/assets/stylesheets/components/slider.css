@@ -1,0 +1,7 @@
+.slider {
+  overflow: hidden;
+  &__container {
+    display: flex;
+    will-change: transform;
+  }
+}
