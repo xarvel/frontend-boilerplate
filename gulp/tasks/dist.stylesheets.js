@@ -4,6 +4,7 @@ const gulp = require('gulp');
 const plumber = require('gulp-plumber');
 const uncss = require('gulp-uncss');
 const postcss = require('gulp-postcss');
+const rename = require('gulp-rename');
 
 module.exports = function() {
     gulp.src(config.src.stylesheets)
@@ -19,6 +20,9 @@ module.exports = function() {
         .pipe(uncss({
             html: [config.src.html],
             ignore: config.uncssignore
+        }))
+        .pipe(rename({
+            extname: ".css"
         }))
         .pipe(gulp.dest(config.dist.stylesheets));
 };

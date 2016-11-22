@@ -53,12 +53,12 @@ docker build -t frontend .
 
 for unix
 ```
-docker run -it --rm --user $(id -u) -v $(pwd):/var/www -w /var/www frontend npm install --no-bin-links
+docker run -it --rm --user $(id -u) -v $(pwd):/var/www -w /var/www frontend npm i --no-bin-links || npm i --no-bin-links
 ```
 
 for windows
 ```
-docker run -it --rm -v %cd%:/var/www -w /var/www frontend npm install --no-bin-links
+docker run -it --rm -v %cd%:/var/www -w /var/www frontend npm i --no-bin-links || npm i --no-bin-links
 ```
 (maybe you have to run it twice)
 ### 4. Run

@@ -4,6 +4,7 @@ const plumber = require('gulp-plumber');
 const sourcemaps = require('gulp-sourcemaps');
 const browserSync = require('browser-sync').get('server');
 const postcss = require('gulp-postcss');
+const rename = require('gulp-rename');
 
 module.exports = function () {
     gulp.src(config.src.stylesheets)
@@ -37,6 +38,13 @@ module.exports = function () {
             ])
         )
         .pipe(sourcemaps.write())
+        .pipe(rename({
+            extname: ".css"
+        }))
         .pipe(gulp.dest(config.build.stylesheets))
         .pipe(browserSync.stream());
 };
+
+
+
+

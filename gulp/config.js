@@ -1,6 +1,6 @@
 module.exports = {
     src: {
-        html: 'src/*.html',
+        html: 'src/template/**/*.html',
         fonts: 'src/assets/fonts/**/*.*',
         images: 'src/assets/images/**/*.*',
         stylesheets: 'src/assets/stylesheets/*.css',
@@ -11,7 +11,7 @@ module.exports = {
         options: {
             //usePolling: true // uncomment for windows
         },
-        html: 'src/**/*.html',
+        html: 'src/template/**/*.html',
         fonts: 'src/assets/fonts/**/*.*',
         images: 'src/assets/images/**/*.*',
         stylesheets: 'src/assets/stylesheets/**/*.css',
