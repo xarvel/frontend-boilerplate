@@ -1,2 +1,2 @@
-FROM node:6-wheezy
+FROM node:latest
 RUN npm install -g gulp bower
