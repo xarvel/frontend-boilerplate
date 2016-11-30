@@ -18,7 +18,7 @@
   │        ├── themes
   │        ├── utils
   │        ├── vendor
-  │        └── main.css
+  │        └── main.pcss
   ├── vendor
   └── template
       ├── layouts
