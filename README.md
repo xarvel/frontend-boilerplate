@@ -12,17 +12,22 @@
   │    ├── javascripts
   │    └── stylesheets
   │        ├── base
+  │        ├── layouts
   │        ├── components
-  │        ├── layout
   │        ├── pages
   │        ├── themes
   │        ├── utils
   │        ├── vendor
   │        └── main.css
-  ├── template
-  │    ├── foot.html
-  │    └── head.html
-  └─── index.html
+  ├── vendor
+  └── template
+      ├── layouts
+      │   └── default.tpl
+      ├── components
+      │   ├── footer.tpl
+      │   ├── header.tpl
+      │   └── menu.tpl
+      └── index.html
 ```
 
 ##Contains
@@ -60,7 +65,6 @@ for windows
 ```
 docker run -it --rm -v %cd%:/var/www -w /var/www frontend npm i --no-bin-links || npm i --no-bin-links
 ```
-(maybe you have to run it twice)
 ### 4. Run
 for unix
 ```

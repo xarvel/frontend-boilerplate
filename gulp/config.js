@@ -9,9 +9,9 @@ module.exports = {
     },
     watch: {
         options: {
-            //usePolling: true // uncomment for windows
+            usePolling: true // uncomment for windows
         },
-        html: 'src/template/**/*.html',
+        html: 'src/template/**/*.{html,tpl}',
         fonts: 'src/assets/fonts/**/*.*',
         images: 'src/assets/images/**/*.*',
         stylesheets: 'src/assets/stylesheets/**/*.css',
