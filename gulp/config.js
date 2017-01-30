@@ -3,7 +3,7 @@ module.exports = {
         html: 'src/template/**/*.html',
         fonts: 'src/assets/fonts/**/*.*',
         images: 'src/assets/images/**/*.*',
-        stylesheets: 'src/assets/stylesheets/*.css',
+        stylesheets: 'src/assets/stylesheets/*.pcss',
         javascripts: 'src/assets/javascripts/*.js',
         vendor: 'src/vendor/**/*.*'
     },
@@ -14,7 +14,7 @@ module.exports = {
         html: 'src/template/**/*.{html,tpl}',
         fonts: 'src/assets/fonts/**/*.*',
         images: 'src/assets/images/**/*.*',
-        stylesheets: 'src/assets/stylesheets/**/*.css',
+        stylesheets: 'src/assets/stylesheets/**/*.pcss',
         javascripts: 'src/assets/javascripts/**/*.js',
         vendor: 'src/vendor/**/*.*'
     },
