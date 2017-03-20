@@ -1,0 +1,59 @@
+.form{
+
+  .has-error  &__control{
+    border: 1px solid #ff0000;
+  }
+  .has-error &__error{
+    display: block;
+  }
+  .has-success &__control{
+    border: 1px solid #00ff00;
+  }
+
+  &__asterisk{
+    color: red;
+  }
+  &__group {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    position: relative;
+  }
+
+  &__label{
+    display: block;
+
+    color: #021433;
+    font-size: 14px;
+    line-height: 1.5;
+    font-weight: 600;
+  }
+
+  &__control{
+    width: 100%;
+    border: 1px solid #e1ecff;
+    outline: none;
+    padding: 10px 15px;
+    background-color: #ffffff;
+    color: #000;
+    font-weight: 300;
+
+    &:invalid {
+      /*border: 1px solid red;*/
+    }
+    &:valid {
+      /*border: 1px solid green;*/
+    }
+    &:disabled{
+      background-color: #cccccc;
+    }
+  }
+
+  &__error{
+    display: none;
+    color: #ff0000;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 18px;
+  }
+
+}

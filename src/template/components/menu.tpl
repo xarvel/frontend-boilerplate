@@ -1,15 +1,18 @@
 <nav>
-    <ul>
-        <li class="active">
+    <ul class="menu">
+        <li class="menu__item active">
             <a href="#">Home</a>
         </li>
-        <li>
+        <li class="menu__item">
+            <a href="#">Link 1</a>
+        </li>
+        <li class="menu__item">
             <a href="#">Link 2</a>
         </li>
-        <li>
+        <li class="menu__item">
             <a href="#">Link 3</a>
         </li>
-        <li>
+        <li class="menu__item">
             <a href="#">Link 4</a>
         </li>
     </ul>
