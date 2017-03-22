@@ -30,12 +30,23 @@ function validateEmail(el) {
     return messages;
 }
 
+function valdateNumber(el) {
+    let messages = [];
+    let value = el.value;
+    let re = /^(?:-?\d+|-?\d{1,3}(?:,\d{3})+)?(?:\.\d+)?$/ ;
+    if (value == '' || !re.test(value)) {
+        messages.push(lang[language]['number']);
+    }
+    return messages;
+}
+
 
 class Form {
     static language = 'en';
     static rules = {
         'required': validateRequired,
-        'email': validateEmail
+        'email': validateEmail,
+        'number': valdateNumber
     };
 
     constructor(Form, options) {
@@ -64,16 +75,19 @@ class Form {
             if (!isValid) {
                 event.preventDefault();
 
-                if (typeof options.errorCallback == 'function') {options.errorCallback()}
+                if (typeof options.errorCallback == 'function') {
+                    options.errorCallback()
+                }
 
             } else {
-                if (typeof options.submitCallback == 'function') {options.submitCallback()}
+                if (typeof options.submitCallback == 'function') {
+                    options.submitCallback()
+                }
             }
         });
     }
 
     setRule(name, validator) {
-
         Form.rules[name] = validator;
     }
 
@@ -141,7 +155,6 @@ class Form {
 export default Form;
 
 
-
 //let form = new Form(document.getElementById('form'), {
 //    language: 'en',
 //    submitCallback: function () {
@@ -161,6 +174,10 @@ export default Form;
 //    {
 //        name: 'email',
 //        rules: ['required', 'email']
+//    },
+//    {
+//        name: 'number',
+//        rules: ['required', 'number'],
 //    },
 //    {
 //        name: 'select',

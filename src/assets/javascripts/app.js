@@ -12,10 +12,4 @@ import Autocomplete from './components/autocomplete';
         document.documentElement.classList.add("fonts-loaded");
     });
 
-    let autocompleteInput = document.getElementsByClassName('js-autocomplete');
-
-    Array.from(autocompleteInput).forEach(function (element) {
-        new Autocomplete(element);
-    });
-
 })();

@@ -1,22 +1,25 @@
 class Autocomplete{
     constructor(element){
-        let autocompleteSource = document.getElementById(element.dataset.source);
+        this.autocompleteSource = document.getElementById(element.dataset.source);
 
-        let autocompleteList = autocompleteSource.getElementsByClassName('autocomplete__option');
+        this.autocompleteInput = element;
+
+        let autocompleteList = this.autocompleteSource.getElementsByClassName('autocomplete__option');
 
         let autocompleteData = [];
+        let self = this;
 
         Array.from(autocompleteList).forEach(function (element) {
             autocompleteData.push(element.textContent);
         });
 
-        autocompleteSource.classList.add('autocomplete_closed');
-        autocompleteSource.innerHTML = '';
+        this.autocompleteSource.classList.add('autocomplete_closed');
+        this.autocompleteSource.innerHTML = '';
 
         window.onclick = function (event) {
-            if(event.target != autocompleteSource && event.target != element){
-                autocompleteSource.classList.add('autocomplete_closed');
-                autocompleteSource.innerHTML = '';
+            if(event.target != this.autocompleteSource && event.target != this.autocompleteInput){
+                self.autocompleteSource.classList.add('autocomplete_closed');
+                self.autocompleteSource.innerHTML = '';
             }
         };
 
@@ -24,8 +27,8 @@ class Autocomplete{
             if (event.key == 'ArrowUp' || event.key == 'ArrowDown' || event.key == 'Enter') {
                 return;
             }
-            autocompleteSource.classList.add('autocomplete_closed');
-            autocompleteSource.innerHTML = '';
+            self.autocompleteSource.classList.add('autocomplete_closed');
+            self.autocompleteSource.innerHTML = '';
 
             let value = this.value;
 
@@ -41,22 +44,18 @@ class Autocomplete{
                 newLi.onclick = function (event) {
                     let val = this.innerHTML;
 
-                    val = val.replace('<span class="autocomplete__marker">', '').replace('</span>', '');
-
-                    element.value = val;
-                    autocompleteSource.classList.add('autocomplete_closed');
-                    autocompleteSource.innerHTML = '';
+                    self.setValue(val);
                 };
 
-                autocompleteSource.appendChild(newLi);
+                self.autocompleteSource.appendChild(newLi);
             });
 
-            autocompleteSource.classList.remove('autocomplete_closed');
+            self.autocompleteSource.classList.remove('autocomplete_closed');
 
         };
 
         element.onkeydown = function (event) {
-            let activeItem = autocompleteSource.getElementsByClassName('active')[0];
+            let activeItem = self.autocompleteSource.getElementsByClassName('active')[0];
 
             if (event.key == 'ArrowUp') {
                 if (activeItem) {
@@ -66,7 +65,7 @@ class Autocomplete{
                         activeItem.classList.add('active');
                     }
                 } else {
-                    activeItem = autocompleteSource.lastElementChild;
+                    activeItem = self.autocompleteSource.lastElementChild;
                     activeItem.classList.add('active');
                 }
             }
@@ -79,7 +78,7 @@ class Autocomplete{
                     }
 
                 } else {
-                    activeItem = autocompleteSource.firstElementChild;
+                    activeItem = self.autocompleteSource.firstElementChild;
                     activeItem.classList.add('active');
                 }
             }
@@ -87,14 +86,19 @@ class Autocomplete{
                 event.preventDefault();
                 if (activeItem) {
                     let val = activeItem.innerHTML;
-                    val = val.replace('<span class="autocomplete__marker">', '').replace('</span>', '');
-                    element.value = val;
-
-                    autocompleteSource.classList.add('autocomplete_closed');
-                    autocompleteSource.innerHTML = '';
+                    self.setValue(val);
                 }
             }
         };
+    }
+
+    setValue(value){
+        let val = value.replace('<span class="autocomplete__marker">', '').replace('</span>', '');
+
+        this.autocompleteInput.value = val;
+        this.autocompleteSource.classList.add('autocomplete_closed');
+        this.autocompleteSource.innerHTML = '';
+        this.autocompleteInput.onchange();
     }
 }
 
