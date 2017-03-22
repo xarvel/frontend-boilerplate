@@ -9,5 +9,5 @@ module.exports = function () {
         .pipe(plumber())
         .pipe(nunjucks.compile())
         .pipe(gulp.dest(config.build.html))
-        .pipe(browserSync.stream());
+        .pipe(browserSync.reload({stream:true}));
 };

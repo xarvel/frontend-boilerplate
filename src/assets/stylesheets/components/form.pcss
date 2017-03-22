@@ -55,5 +55,49 @@
     font-size: 12px;
     line-height: 18px;
   }
+}
 
+.autocomplete{
+  position: absolute;
+  display: block;
+  margin: 0;
+  padding: 0;
+  border: 1px solid #c4c4c4;
+  background-color: #fff;
+  z-index: 9999;
+  overflow-x: hidden;
+  overflow-y: auto;
+  color: #313131;
+  width: 100%;
+
+  &_closed{
+    display: none;
+  }
+
+  &__marker{
+    background-color: #ffff00;
+  }
+  &__option{
+    display: list-item;
+    list-style-type: none;
+    margin: 0;
+    padding: 8px 10px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis
+  }
+  &__option + &__option{
+    border-top: 1px solid #ededed
+  }
+
+
+  &__option:hover{
+    background-color: #f2f2f2;
+    cursor: pointer
+  }
+
+  &__option.active{
+    background-color: #f2f2f2;
+    cursor: pointer
+  }
 }
