@@ -1,5 +1,28 @@
-.menu{
+.menu {
   padding: 0;
   margin: 0;
   list-style: none;
+
+}
+
+.menu_inline {
+  font-size: 0;
+
+  .menu__item {
+    background-color: #ccc;
+    padding: 5px 10px;
+  }
+  > .menu__item {
+    display: inline-block;
+    font-size: 16px;
+
+    > .menu {
+      position: absolute;
+      display: none;
+      z-index: 1;
+    }
+    &.hover > .menu{
+      display: block;
+    }
+  }
 }

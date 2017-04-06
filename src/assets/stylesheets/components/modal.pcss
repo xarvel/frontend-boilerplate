@@ -1,9 +1,10 @@
 
 .modal {
   display: block;
-  position: fixed; /* Stay in place */
+  position: fixed;
   z-index: 1; /* Sit on top */
   padding-top: 100px; /* Location of the box */
+  padding-bottom: 100px;
   left: 0;
   top: 0;
   width: 100%; /* Full width */
@@ -20,29 +21,30 @@
   position: relative;
   background-color: #fefefe;
   margin: auto;
-  padding: 0;
+
   border: 1px solid #888;
   width: 80%;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
-  animation-name: animatetop;
-  animation-duration: 0.4s
+  animation-name: animate_modal;
+  animation-duration: 0.4s;
+  padding: 45px;
 }
 
-@keyframes animatetop {
+@keyframes animate_modal {
   from {
-    top: -300px; 
+    top: -300px;
     opacity: 0;
   }
 
   to {
-    top: 0; 
+    top: 0px;
     opacity: 1;
   }
 }
 
 /* The Close Button */
 .modal__close {
-  color: white;
+  color: #000;
   float: right;
   font-size: 28px;
   font-weight: bold;
@@ -60,8 +62,8 @@
 
 .modal__header {
   padding: 2px 16px;
-  background-color: #5cb85c;
-  color: white;
+
+  color: #000000;
 }
 
 .modal__body {

@@ -1,0 +1,96 @@
+
+.lightbox {
+  display: block;
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.9); /* Black w/ opacity */
+
+  touch-action: none;
+  user-select: none;
+  -webkit-user-drag: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.lightbox_closed {
+  display: none;
+}
+
+.lightbox__content {
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  animation-name: animate_lightbox;
+  animation-duration: 0.4s;
+
+
+
+  img {
+    vertical-align: middle;
+    width: 100%;
+  }
+}
+
+@keyframes animate_lightbox {
+  from {
+    top: -50%;
+    opacity: 0;
+  }
+
+  to {
+    top: 50%;
+    opacity: 1;
+  }
+}
+
+/* The Close Button */
+.lightbox__close {
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+  background: none;
+  border: 0;
+  height: 100px;
+  width: 100px;
+  z-index: 10;
+  position: absolute;
+  right: 0;
+}
+
+.lightbox__close:hover,
+.lightbox__close:focus {
+  background-color: rgba(0, 0, 0, 0.4);
+  /*color: #000;*/
+  text-decoration: none;
+  cursor: pointer;
+  outline: none;
+}
+
+.lightbox__header {
+  padding: 2px 16px;
+  background-color: #5cb85c;
+  color: white;
+}
+
+.lightbox__body {
+  padding: 2px 16px;
+}
+
+.lightbox__title{
+  background-color: rgba(0, 0, 0, 0.4);
+  position: absolute;
+  color: #fff;
+  padding: 20px;
+  bottom: 0;
+  width: 400px;
+  max-width: 100%;
+}

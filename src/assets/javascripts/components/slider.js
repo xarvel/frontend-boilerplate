@@ -39,10 +39,10 @@ class Slider {
 
 export default Slider;
 
-// var slider = new Slider(document.getElementById('js-slider'));
+// let slider = new Slider(document.getElementById('js-slider'));
 //
-// var sliderNextButton = document.getElementById('js-slide-navigation-next');
-// var sliderPreviousButton = document.getElementById('js-slide-navigation-previous');
+// let sliderNextButton = document.getElementById('js-slide-navigation-next');
+// let sliderPreviousButton = document.getElementById('js-slide-navigation-previous');
 //
 // function disableButtons() {
 //     sliderNextButton.disabled = slider.haveNext == false;

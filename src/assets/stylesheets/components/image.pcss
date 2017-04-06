@@ -1,0 +1,26 @@
+.image {
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+
+
+  &__hover {
+    position: absolute;
+    width: 30px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+
+
+
+    path{
+      background-color: #ffffff !important;
+      fill: #ffffff !important;
+    }
+  }
+
+  &:hover &__hover{
+    display: block;
+  }
+}

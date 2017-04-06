@@ -14,9 +14,9 @@
     <link rel='stylesheet' href='assets/stylesheets/main.css'>
 
     <!--For responsive design--->
-    <!--
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    -->
+
 </head>
 <body>
 
@@ -30,7 +30,6 @@
         This is the default content
         {% endblock %}
 
-        {% include "components/footer.tpl" %}
     </div>
     <!-- close container -->
 </div>
